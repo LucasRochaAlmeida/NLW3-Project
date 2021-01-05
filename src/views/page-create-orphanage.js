@@ -87,3 +87,11 @@ function toggleSelect(event){
     //verificar se sim ou não
     input.value = button.dataset.value
 }
+
+function validate(event){
+    const needsLatAndLng = true;
+    if(needsLatAndLng){
+        event.preventDefault()
+        alert('Selecione um ponto no mapa')
+    }
+}
