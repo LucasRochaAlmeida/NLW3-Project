@@ -9,6 +9,9 @@ console.log(pages)
 const server = express();
 server
 
+//utilizando body do req
+.use(express.urlencoded({extended: true}))
+
 //utilizando arquivos estáticos
 .use(express.static('src/views'))
 
@@ -21,6 +24,7 @@ server
 .get('/orphanage', pages.orphanage)
 .get('/orphanages', pages.orphanages)
 .get('/create-orphanage', pages.createOrphanage)
+.post('/save-orphanage', pages.saveOrphanage)
 
 //ligar o servidor
 server.listen(5500)
